@@ -1,76 +1,269 @@
-‎<!DOCTYPE html>
-‎<html lang="id">
-‎<head>
-‎    <meta charset="UTF-8">
-‎    <title>MusicKu</title>
-‎    
-‎    <style>
-‎* {
-‎    font-family: 'times new roman', cursive !important;
-‎    font-size: 50px
-‎}
-‎body {
-  background-image: url('png.png');
-‎  background-size: 100% auto;
-‎  background-repeat: no-repeat;
-‎  background-attachment: fixed;
-‎  background-position: center;
-  background-color: cyan;
-‎}
-‎
-‎
-‎
-‎    </style>
-‎</head>
-‎<body>
-‎    <h1 align="center">Selamat Datang di MusicKu</h1>
-‎    <p align="center"> <img src="gitar akustik.png"alt"="gambar" width="300px"</p>
-‎    <p>Selamat datang di tempat berbagi lagu favorit<br>
-‎      di sini, 
-‎    </p>
-‎    <p align="left">
-‎    berikut genre lagu yang saya buat: <br>
-‎    1. Lagu Pop <br>
-‎    2. Lagu EDM<br>
-‎    3. lagu rock<br>
-‎    4. lagu ballad<br>
-‎    5. lagu pop<br>
-‎    6. lagu metal<br>
-‎    </p>
-‎        <div align="center">
-‎        <select
-‎            onchange="window.location.href=this.value">
-‎            <option value="disable selected">pilih halaman</option>
-‎            
-‎            <option value="index.html">halaman 1</option>
-‎            <option value="all_rock_song.html">halaman 2</option>
-‎            <option value="slowrock.html">halaman 3</option>
-‎            <option value="halaman2.html">pengertian lagu</option>
-‎        </select>            
-‎            </div>
-‎        
-‎        
-‎        
-‎        <div align="center">
-‎    <p> ayo kita dengerkan lagu berikut!</p>
-‎        <p> <img src="kuda.png"alt"="gambar" width="200px"</p><br>
-‎    <p> <a href="https://youtu.be/dSBR3MeZRRg?si=6GQS9QAGCeEJuw2O">klik di sini untuk mendengarkan lagu metal</a><br><br>
-‎        <img src="dewi.png"alt="gambar" width="200px"</p><br><br>
-‎            <a href=https://youtu.be/l17JxZitvYU?si=s0BiHlByaHQzTgLw>klik di sini untuk mendengarkan lagu rock</a><br><br><br>
-‎        <img src="bulan.png"alt="gambar" width="200px"<br><br><br>
-‎        <a href=https://youtu.be/WNZ15z4Ij54?si=r7DF6LE4ZGw6NHJI>klik di sini untuk mendengarkan lagu ballad</a>
-‎        </div>
-‎        
-‎        <div align="center">
-‎            <p>dengarkan contoh lagu:</p>
-‎            <audio controls style="width: 90%
-‎                margin: 15px 0; border-radius: 8px;">
-‎            <source
-‎                src="excessive focus.mp3"
-‎                type="audio/mpeg">
-‎                maaf, pera gkat kamu tufak kompatibel dengan audio<br>
-‎                ini
-‎            </div>
-‎</body>
-‎</html>
-‎
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MusicKu</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0d0d0d;
+    color:white;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:#111;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 0 15px #00ffcc;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:#00ffcc;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    color:#00ffcc;
+}
+
+/* Hero */
+.hero{
+    text-align:center;
+    padding:80px 20px;
+    background:linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.9)
+    ),
+    url('note.png');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:60px;
+    color:#00ffcc;
+    text-shadow:0 0 20px #00ffcc;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:20px;
+    color:#ddd;
+}
+
+/* Album */
+.section-title{
+    margin:40px;
+    color:#00ffcc;
+}
+
+.album-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    padding:0 40px;
+}
+
+.album{
+    background:#161616;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.4s;
+    box-shadow:0 0 10px rgba(0,255,204,0.2);
+}
+
+.album:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px #00ffcc;
+}
+
+.album img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.album-content{
+    padding:15px;
+}
+
+.album h3{
+    margin-bottom:8px;
+}
+
+.play-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 18px;
+    background:#00ffcc;
+    color:black;
+    text-decoration:none;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+/* Playlist */
+.playlist{
+    margin:50px 40px;
+    background:#161616;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.song{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 20px;
+    border-bottom:1px solid #333;
+}
+
+.song:hover{
+    background:#1f1f1f;
+}
+
+/* Audio */
+.player{
+    text-align:center;
+    margin:40px;
+}
+
+audio{
+    width:90%;
+    max-width:700px;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#111;
+    margin-top:50px;
+    color:#999;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🎵 MusicKu</div>
+
+    <div class="menu">
+        <a href="#">Beranda</a>
+        <a href="#">Album</a>
+        <a href="#">Playlist</a>
+        <a href="#">Tentang</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Selamat Datang di MusicKu</h1>
+    <p>Dengarkan karya musik favoritmu kapan saja.</p>
+</section>
+
+<h2 class="section-title">Album Pilihan</h2>
+
+<div class="album-grid">
+
+    <div class="album">
+        <img src="kuda.png">
+        <div class="album-content">
+            <h3>Metal Collection</h3>
+            <p>Kumpulan lagu metal terbaik.</p>
+            <a class="play-btn"
+            href="https://youtu.be/dSBR3MeZRRg?si=6GQS9QAGCeEJuw2O">
+            ▶ Putar
+            </a>
+        </div>
+    </div>
+
+    <div class="album">
+        <img src="dewi.png">
+        <div class="album-content">
+            <h3>Rock Collection</h3>
+            <p>Kumpulan lagu rock pilihan.</p>
+            <a class="play-btn"
+            href="https://youtu.be/l17JxZitvYU?si=s0BiHlByaHQzTgLw">
+            ▶ Putar
+            </a>
+        </div>
+    </div>
+
+    <div class="album">
+        <img src="bulan.png">
+        <div class="album-content">
+            <h3>Ballad Collection</h3>
+            <p>Lagu ballad yang menenangkan.</p>
+            <a class="play-btn"
+            href="https://youtu.be/WNZ15z4Ij54?si=r7DF6LE4ZGw6NHJI">
+            ▶ Putar
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<h2 class="section-title">Playlist Terbaru</h2>
+
+<div class="playlist">
+
+    <div class="song">
+        <span>🎸 Lagu Rock</span>
+        <span>03:45</span>
+    </div>
+
+    <div class="song">
+        <span>🤘 Lagu Metal</span>
+        <span>04:12</span>
+    </div>
+
+    <div class="song">
+        <span>🌙 Lagu Ballad</span>
+        <span>05:01</span>
+    </div>
+
+    <div class="song">
+        <span>🎧 Lagu EDM</span>
+        <span>03:58</span>
+    </div>
+
+</div>
+
+<div class="player">
+    <h2>Contoh Lagu</h2>
+    <br>
+
+    <audio controls>
+        <source src="excessive focus.mp3" type="audio/mpeg">
+        Browser tidak mendukung audio.
+    </audio>
+</div>
+
+<footer>
+    © 2026 MusicKu • Dark Neon Music Platform
+</footer>
+
+</body>
+</html>
