@@ -1,80 +1,275 @@
-‎<!DOCTYPE html>
-‎<html lang="id">
-‎<head>
-‎  <meta charset="UTF-8">
-‎  <title>all rock song</title>
-‎  <style>
-‎  
-‎  body {
-‎  font-family: 'metal mania', cursive;
-‎  font-size: 24px;
-‎  font-weight: 600;
-‎  
-‎
-‎  background-image: url('note.png');
-‎  background-size: contain;
-‎  background-repeat: no-repeat;
-‎  background-attachment: fixed;
-‎  background-position: center;
-‎}
-‎
-‎  </style>
-‎  
-‎  
-‎</head>
-‎<body>
-‎  
-‎  <h3 align="center">daftar lagu rock</h3>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Playlist - MusicKu</title>
 
-<div align="center">
-‎<select onchange="window.location.href=this.value">
-‎  <option value="" disabled selected>pilih halaman</option>
-‎  
-‎  <option value="index.html">halaman 1</option>
-‎  <option value="all_rock_song.html">halaman 2</option>
-‎  <option value="slowrock.html">halaman 3</option>
-‎  <option value="halaman2.html">pengertian lagu</option>
-‎</select>
-‎  </div>
-  
-‎  
-‎  <div align="left">
-‎  <a href="https://youtu.be/gGbw2K3PlmQ?si=R3EFJTQN4xjJQO_i">1.last stand</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/snhXwoDKC6A?si=LSmf4kN31IoOSSXG">2.storm of love</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/mWOSAFJWLeA?si=5Zvb1ru_XINpZH7p">3.yamato damashi</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/9nWvSw-4aBk?si=MlTUcl5-mLgSir7Q">4.ningen no sekai</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/QDUfAeAEfRY?si=e9D1rQ53cswzH4Et">5.in the maze</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/XUQhaRwiyyY?si=IruJ8UH1QDhQzlSD">6.carved in chain</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/1DFzaquBcxo?si=3C5nQodec2S7RcvN">7.the grand deception</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/coWf669HoOM?si=Wx6uMwmfACTLvrcb">8.unmei wo kirisake</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/khkxiHqW58Q?si=htRO408g7Qn_wk_C">9.pure regeneration</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/GysGNtzE7AY?si=jdGNEesQdZVmVqmh">10.solar glory</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/BDxzeWxj8ik?si=Ub0umaQoClqEgRY8">11.tengah malam yang terakhir</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/1OVleYNaQUs?si=Qu1N8BktylcnbTik">12.mienai kusari</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/tY-So4YWtvE?si=wr_nRUq0GAqasWxd">13.okizari no boku</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/w8KF5MlBmWM?si=BgBnc5gQ50icW2no">14.sayap diantara dimensi</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/FZAztmjzLXE?si=gnw5eA7X6blYZ5VV">15.api dijalan gelap</a><br>
-‎  <br>
-‎  <a href="https://youtu.be/eI_kUVnVF4g?si=suBRWzQU4DQuLf9I">16.kami hitokire</a><br>
-‎  <br>
-‎  <p align="center">
-‎  <a href="https://www.youtube.com/@AhmadRifai-d1y1b">kunjungi chennel saya</a>
-‎  </div>
-‎  </p>
-‎</body>
-‎</html>
-‎
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0d0d0d;
+    color:white;
+}
+
+/* Navbar */
+
+nav{
+    background:#111;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 0 15px #00ffcc;
+}
+
+.logo{
+    color:#00ffcc;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+nav a:hover{
+    color:#00ffcc;
+}
+
+/* Header */
+
+.header{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(
+    rgba(0,0,0,.6),
+    rgba(0,0,0,.9)),
+    url('note.png');
+
+    background-size:cover;
+}
+
+.header h1{
+    font-size:50px;
+    color:#00ffcc;
+    text-shadow:0 0 20px #00ffcc;
+}
+
+.header p{
+    margin-top:10px;
+    color:#bbb;
+}
+
+/* Playlist */
+
+.playlist{
+    width:90%;
+    max-width:1000px;
+    margin:40px auto;
+}
+
+.song{
+    background:#161616;
+    margin-bottom:15px;
+    padding:18px 20px;
+    border-radius:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:.3s;
+    box-shadow:0 0 10px rgba(0,255,204,.15);
+}
+
+.song:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px #00ffcc;
+}
+
+.song-title{
+    font-size:18px;
+}
+
+.play-btn{
+    background:#00ffcc;
+    color:black;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+/* Channel */
+
+.channel{
+    text-align:center;
+    margin:40px;
+}
+
+.channel a{
+    text-decoration:none;
+    background:#ff0055;
+    color:white;
+    padding:12px 25px;
+    border-radius:25px;
+}
+
+/* Dropdown */
+
+.page-nav{
+    text-align:center;
+    margin:40px;
+}
+
+select{
+    padding:12px;
+    border-radius:10px;
+    background:#222;
+    color:white;
+    border:1px solid #00ffcc;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    background:#111;
+    color:#999;
+    padding:25px;
+    margin-top:50px;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">🎸 MusicKu Rock</div>
+
+    <div>
+        <a href="index.html">Beranda</a>
+        <a href="all_rock_song.html">Rock</a>
+        <a href="slowrock.html">Slow Rock</a>
+    </div>
+</nav>
+
+<div class="header">
+    <h1>ROCK PLAYLIST</h1>
+    <p>16 Lagu Rock Pilihan Terbaik</p>
+</div>
+
+<div class="playlist">
+
+<div class="song">
+<span class="song-title">01. Last Stand</span>
+<a class="play-btn" href="https://youtu.be/gGbw2K3PlmQ?si=R3EFJTQN4xjJQO_i">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">02. Storm of Love</span>
+<a class="play-btn" href="https://youtu.be/snhXwoDKC6A?si=LSmf4kN31IoOSSXG">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">03. Yamato Damashi</span>
+<a class="play-btn" href="https://youtu.be/mWOSAFJWLeA?si=5Zvb1ru_XINpZH7p">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">04. Ningen no Sekai</span>
+<a class="play-btn" href="https://youtu.be/9nWvSw-4aBk?si=MlTUcl5-mLgSir7Q">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">05. In The Maze</span>
+<a class="play-btn" href="https://youtu.be/QDUfAeAEfRY?si=e9D1rQ53cswzH4Et">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">06. Carved In Chain</span>
+<a class="play-btn" href="https://youtu.be/XUQhaRwiyyY?si=IruJ8UH1QDhQzlSD">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">07. The Grand Deception</span>
+<a class="play-btn" href="https://youtu.be/1DFzaquBcxo?si=3C5nQodec2S7RcvN">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">08. Unmei Wo Kirisake</span>
+<a class="play-btn" href="https://youtu.be/coWf669HoOM?si=Wx6uMwmfACTLvrcb">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">09. Pure Regeneration</span>
+<a class="play-btn" href="https://youtu.be/khkxiHqW58Q?si=htRO408g7Qn_wk_C">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">10. Solar Glory</span>
+<a class="play-btn" href="https://youtu.be/GysGNtzE7AY?si=jdGNEesQdZVmVqmh">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">11. Tengah Malam Yang Terakhir</span>
+<a class="play-btn" href="https://youtu.be/BDxzeWxj8ik?si=Ub0umaQoClqEgRY8">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">12. Mienai Kusari</span>
+<a class="play-btn" href="https://youtu.be/1OVleYNaQUs?si=Qu1N8BktylcnbTik">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">13. Okizari no Boku</span>
+<a class="play-btn" href="https://youtu.be/tY-So4YWtvE?si=wr_nRUq0GAqasWxd">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">14. Sayap Diantara Dimensi</span>
+<a class="play-btn" href="https://youtu.be/w8KF5MlBmWM?si=BgBnc5gQ50icW2no">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">15. Api Dijalan Gelap</span>
+<a class="play-btn" href="https://youtu.be/FZAztmjzLXE?si=gnw5eA7X6blYZ5VV">▶ Putar</a>
+</div>
+
+<div class="song">
+<span class="song-title">16. Kami Hitokire</span>
+<a class="play-btn" href="https://youtu.be/eI_kUVnVF4g?si=suBRWzQU4DQuLf9I">▶ Putar</a>
+</div>
+
+</div>
+
+<div class="channel">
+<a href="https://www.youtube.com/@AhmadRifai-d1y1b">
+📺 Kunjungi Channel Saya
+</a>
+</div>
+
+<div class="page-nav">
+<select onchange="window.location.href=this.value">
+<option selected disabled>Pilih Halaman</option>
+<option value="index.html">Beranda</option>
+<option value="all_rock_song.html">Rock Playlist</option>
+<option value="slowrock.html">Slow Rock</option>
+<option value="halaman2.html">Pengertian Lagu</option>
+</select>
+</div>
+
+<footer>
+© 2026 MusicKu • Rock Collection
+</footer>
+
+</body>
+  </html>
